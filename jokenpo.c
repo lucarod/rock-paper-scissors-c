@@ -10,9 +10,9 @@ int main() {
   int playAgain = 1;
   
   while (playAgain == 1) {
-    printf("---------------------------------\n");
-    printf("    PEDRA, PAPEL OU TESOURA\n");
-    printf("---------------------------------\n\n");
+    printf("------------------------------------------------\n");
+    printf("    PEDRA, PAPEL, TESOURA, LAGARTO OU SPOCK\n");
+    printf("------------------------------------------------\n\n");
     
     printf("A partida será disputada em uma melhor de cinco contra o computador, o primeiro a fazer 3 pontos vence.\n");
     
@@ -32,17 +32,19 @@ int main() {
       printf("\nSelecione uma opção: \n");
       printf("1. Pedra\n");
       printf("2. Papel\n");
-      printf("3. Tesoura\n\n");
+      printf("3. Tesoura\n");
+      printf("4. Lagarto\n");
+      printf("5. Spock\n\n");
       
       scanf("%d", &playerOption);
       
-      if(playerOption < 1 || playerOption > 3) {
+      if(playerOption < 1 || playerOption > 5) {
         printf("\nPor favor, digite uma opção válida.\n");
         printf("\n--------------------------------\n");
         continue;
       }
       
-      int computerOption = (rand() % 3) + 1;
+      int computerOption = (rand() % 5) + 1;
       
       if (computerOption == 1) {
         printf("\nComputador jogou pedra.\n");
@@ -56,6 +58,14 @@ int main() {
         printf("\nComputador jogou tesoura.\n");
       }
       
+      if (computerOption == 4) {
+        printf("\nComputador jogou lagarto.\n");
+      }
+      
+      if (computerOption == 5) {
+        printf("\nComputador jogou spock.\n");
+      }
+      
       if (playerOption == 1 && computerOption == 2) {
         printf("\nComputador venceu a rodada.\n");
         computerPoints++;
@@ -64,6 +74,16 @@ int main() {
       if (playerOption == 1 && computerOption == 3) {
         printf("\nJogador venceu a rodada.\n");
         playerPoints++;
+      }
+      
+      if (playerOption == 1 && computerOption == 4) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
+      if (playerOption == 1 && computerOption == 5) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
       }
       
       if (playerOption == 2 && computerOption == 1) {
@@ -76,6 +96,16 @@ int main() {
         computerPoints++;
       }
       
+      if (playerOption == 2 && computerOption == 4) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
+      }
+      
+      if (playerOption == 2 && computerOption == 5) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
       if (playerOption == 3 && computerOption == 1) {
         printf("\nComputador venceu a rodada.\n");
         computerPoints++;
@@ -84,6 +114,56 @@ int main() {
       if (playerOption == 3 && computerOption == 2) {
         printf("\nJogador venceu a rodada.\n");
         playerPoints++;
+      }
+      
+      if (playerOption == 3 && computerOption == 4) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
+      if (playerOption == 3 && computerOption == 5) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
+      }
+      
+      if (playerOption == 4 && computerOption == 1) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
+      }
+      
+      if (playerOption == 4 && computerOption == 2) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
+      if (playerOption == 4 && computerOption == 3) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
+      }
+      
+      if (playerOption == 4 && computerOption == 5) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
+      if (playerOption == 5 && computerOption == 1) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
+      if (playerOption == 5 && computerOption == 2) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
+      }
+      
+      if (playerOption == 5 && computerOption == 3) {
+        printf("\nJogador venceu a rodada.\n");
+        playerPoints++;
+      }
+      
+      if (playerOption == 5 && computerOption == 4) {
+        printf("\nComputador venceu a rodada.\n");
+        computerPoints++;
       }
       
       if(playerOption == computerOption) {
